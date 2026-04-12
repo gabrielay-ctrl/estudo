@@ -81,7 +81,7 @@ python -m src.cli complete 1 0
 
 ---
 
-## 🧪 Testes Automatizados e Qualidade
+## Testes Automatizados e Qualidade
 
 O projeto conta com CI contínuo através da plataforma *GitHub Actions* configurada no arquivo `.github/workflows/ci.yml`.
 
