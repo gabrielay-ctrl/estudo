@@ -4,8 +4,7 @@
 
  entrega-intermediaria
 ##  Aplicação Online (Deploy Público - Entrega Intermediária)
-Acesse a aplicação web completa com interface interativa:
-**[Link Vercel]** (https://estudo-swart.vercel.app)
+Acesse a aplicação web completa com interface interativa: (https://estudo-swart.vercel.app)
 =======
 ##  O Problema Real
 main
