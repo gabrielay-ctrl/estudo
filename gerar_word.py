@@ -1,6 +1,4 @@
 from docx import Document
-from docx.shared import Pt
-import os
 
 doc = Document()
 doc.add_heading('Entrega Inicial - Bootcamp', 0)
@@ -44,7 +42,7 @@ file_path = r"C:\Users\gabit\OneDrive\Área de Trabalho\Entrega_Bootcamp_Gabriel
 try:
     doc.save(file_path)
     print(f"Word gerado com sucesso em: {file_path}")
-except Exception as e:
+except Exception:
     alt_path = r"C:\Users\gabit\.gemini\antigravity\scratch\estudo\Entrega_Bootcamp_Gabriela.docx"
     doc.save(alt_path)
     print(f"Salvo no caminho alternativo: {alt_path}")

@@ -59,7 +59,7 @@ file_path = r"C:\Users\gabit\OneDrive\Área de Trabalho\Entrega_Bootcamp_Gabriel
 try:
     pdf.output(file_path)
     print(f"PDF gerado com sucesso em: {file_path}")
-except Exception as e:
+except Exception:
     alt_path = r"C:\Users\gabit\.gemini\antigravity\scratch\estudo\Entrega_Bootcamp_Gabriela.pdf"
     pdf.output(alt_path)
     print(f"Salvo no caminho alternativo: {alt_path}")
