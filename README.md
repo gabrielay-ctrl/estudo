@@ -18,8 +18,7 @@ O MindStep atua como um facilitador de foco e fatiamento de tarefas. Quando Júl
 Isso ameniza a paralisia, promove ancoragem atencional e recompensa passos muito curtos.
 
 entrega-intermediaria
-##  Público-Alvo
-=======
+
 ## Público-Alvo
  main
 - Estudantes neurodivergentes (ADHD/TDAH e Autistas).
