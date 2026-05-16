@@ -15,10 +15,7 @@ A principal dor aqui é a **Paralisia por Análise e Sobrecarga Cognitiva**, ond
 O MindStep atua como um facilitador de foco e fatiamento de tarefas. Quando Júlia tenta cadastrar algo como "Estudar Física", o CLI **obriga** a quebra da tarefa em pelo menos 3 "micro-passos" (ex: "Ler o sumário", "Beber um copo d'água", "Fazer 2 exercícios"). 
 Isso ameniza a paralisia, promove ancoragem atencional e recompensa passos muito curtos.
 
-entrega-intermediaria
-
 ## Público-Alvo
- main
 - Estudantes neurodivergentes (ADHD/TDAH e Autistas).
 - Pessoas sofrendo de crises agudas de ansiedade que atrapalhem as atividades do dia a dia.
 - Qualquer usuário enfrentando episódios de "task paralysis" e esquecimento devido à sobrecarga.
@@ -40,7 +37,7 @@ entrega-intermediaria
 ### Pré-requisitos
 - Ter o Python 3 instalado no computador (versão 3.8+ recomendada)
 - Git para clonar o repositório
-
+- 
 ### Passo 1: Clone o Repositório
 Abra o seu terminal e rode:
 ```bash
@@ -71,8 +68,6 @@ O projeto agora possui uma interface Web moderna utilizando **FastAPI**. Para in
 ```bash
 uvicorn app:app --reload
 ```
-Acesse no seu navegador: `http://localhost:8000`
-
 ### Como usar o antigo CLI:
 O núcleo CLI continua disponível em `src/cli.py`.
 **1. Adicionando:** `python -m src.cli add "Estudar Quimica" -s "Passo 1" "Passo 2" "Passo 3"`
