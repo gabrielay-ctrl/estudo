@@ -4,11 +4,15 @@
 
 **MindStep Tracker** é uma aplicação em Linha de Comando (CLI) desenvolvida em Python para apoiar pessoas neurodivergentes e/ou que enfrentam Transtorno do Déficit de Atenção com Hiperatividade (TDAH) e Ansiedade.
 
+ entrega-intermediaria
 ## 🚀 Aplicação Online (Deploy Público - Entrega Intermediária)
 Acesse a aplicação web completa com interface interativa:
 👉 **[Link Vercel]** (Em breve - Deploy via Vercel)
 
 ## O Problema Real
+=======
+##  O Problema Real
+main
 Imagine o seguinte cenário: **Júlia** é uma universitária com diagnóstico de TDAH e Transtorno de Ansiedade Generalizada. Durante as semanas de provas, ela frequentemente sofre crises de paralisia de tarefas. Diante do item "Estudar Física", tudo parece muito grande, complexo e inatingível. A ansiedade toma conta, e, devido ao estresse e esquecimento gerados pelas crises, ela frequentemente se esquece até do autocuidado primário, como beber água ou tomar seus medicamentos durante longos períodos de estudo.
 
 A principal dor aqui é a **Paralisia por Análise e Sobrecarga Cognitiva**, onde grandes tarefas geram não apenas a procrastinação evasiva, mas danos paralelos ao esquecer hábitos fundamentais.
@@ -17,7 +21,11 @@ A principal dor aqui é a **Paralisia por Análise e Sobrecarga Cognitiva**, ond
 O MindStep atua como um facilitador de foco e fatiamento de tarefas. Quando Júlia tenta cadastrar algo como "Estudar Física", o CLI **obriga** a quebra da tarefa em pelo menos 3 "micro-passos" (ex: "Ler o sumário", "Beber um copo d'água", "Fazer 2 exercícios"). 
 Isso ameniza a paralisia, promove ancoragem atencional e recompensa passos muito curtos.
 
+entrega-intermediaria
 ##  Público-Alvo
+=======
+## Público-Alvo
+ main
 - Estudantes neurodivergentes (ADHD/TDAH e Autistas).
 - Pessoas sofrendo de crises agudas de ansiedade que atrapalhem as atividades do dia a dia.
 - Qualquer usuário enfrentando episódios de "task paralysis" e esquecimento devido à sobrecarga.
@@ -27,14 +35,14 @@ Isso ameniza a paralisia, promove ancoragem atencional e recompensa passos muito
 2. **Sistema de recompensas e API Externa:** Ajuda a nutrir a sensação de "1% de progresso". O sistema está integrado com a **Advice Slip API**, provendo conselhos motivacionais dinâmicos a cada passo concluído.
 3. **Persistência leve de dados:** Tudo fica salvo localmente em `mindstep_data.json` - não requer internet nem login complexo.
 
-## 💻 Tecnologias Utilizadas
+##Tecnologias Utilizadas
 - **Python 3.12+** (Linguagem pura / Base de Código)
 - **Pytest** (Automático: Caminho feliz, Regras de quebra, Exceções)
 - **Ruff** (Linting / Análise Estática de Código)
 - **GitHub Actions** (Workflow de CI - Integração Contínua)
 - **Versão Semântica** declarada no arquivo `VERSION` (1.0.0)
 
-## 📦 Instruções de Instalação e Execução
+## Instruções de Instalação e Execução
 
 ### Pré-requisitos
 - Ter o Python 3 instalado no computador (versão 3.8+ recomendada)
@@ -80,7 +88,7 @@ O núcleo CLI continua disponível em `src/cli.py`.
 
 ---
 
-## 🧪 Testes Automatizados e Qualidade
+## Testes Automatizados e Qualidade
 
 O projeto conta com CI contínuo através da plataforma *GitHub Actions* configurada no arquivo `.github/workflows/ci.yml`.
 
