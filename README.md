@@ -1,7 +1,5 @@
 # MindStep Tracker 
 
-![Status do Build](https://github.com/gabrielay-ctrl/estudo/actions/workflows/ci.yml/badge.svg)
-
 **MindStep Tracker** é uma aplicação em Linha de Comando (CLI) desenvolvida em Python para apoiar pessoas neurodivergentes e/ou que enfrentam Transtorno do Déficit de Atenção com Hiperatividade (TDAH) e Ansiedade.
 
  entrega-intermediaria
