@@ -2,7 +2,9 @@ import json
 import os
 from typing import List, Dict
 
-DATA_FILE = "mindstep_data.json"
+import tempfile
+
+DATA_FILE = os.path.join(tempfile.gettempdir(), "mindstep_data.json")
 
 class MindStepManager:
     def __init__(self, data_file=DATA_FILE):

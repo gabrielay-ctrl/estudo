@@ -7,9 +7,14 @@ from typing import List
 from src.microstep import MindStepManager
 from src.api_client import get_motivational_advice
 
+import os
+
 app = FastAPI(title="MindStep Web")
 manager = MindStepManager()
-templates = Jinja2Templates(directory="templates")
+
+# Corrige o caminho para a Vercel encontrar a pasta templates
+base_dir = os.path.dirname(os.path.abspath(__file__))
+templates = Jinja2Templates(directory=os.path.join(base_dir, "templates"))
 
 class TaskCreate(BaseModel):
     title: str
