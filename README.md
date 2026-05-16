@@ -104,5 +104,3 @@ ruff check .
 ---
 
 **Autor:** Gabriela Yasmin da Conceição Viana
-**Licença:** MIT
-**Versão Atual:** Veja o arquivo `VERSION` (Atualmente: v1.0.0)
