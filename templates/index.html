@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindStep - Avance 1% ao Dia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --primary: #8b5cf6;
+            --primary-hover: #7c3aed;
+            --success: #10b981;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at top right, rgba(139, 92, 246, 0.15), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.1), transparent 40%);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #a78bfa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .advice-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .advice-card p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            font-style: italic;
+            color: #e2e8f0;
+        }
+
+        .advice-badge {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            color: #c4b5fd;
+            padding: 0.2rem 0.8rem;
+            border-radius: 99px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .task-creation {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.3);
+        }
+
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.1s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background: var(--primary-hover);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .tasks-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .task-item {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .task-item:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+        }
+
+        .task-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .status-badge {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+            padding: 0.3rem 0.8rem;
+            border-radius: 99px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .micro-step {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            background: rgba(15, 23, 42, 0.4);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .micro-step:hover {
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .micro-step.completed {
+            opacity: 0.6;
+            text-decoration: line-through;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .completed .checkbox {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .completed .checkbox::after {
+            content: '✓';
+            color: white;
+            font-size: 14px;
+        }
+
+        #error-msg {
+            color: #ef4444;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>MindStep</h1>
+            <p style="color: var(--text-muted);">Quebre a paralisia. Avance 1% ao dia.</p>
+        </header>
+
+        <!-- Integração da API no Frontend -->
+        <div class="advice-card">
+            <span class="advice-badge">Conselho do Dia (API)</span>
+            <p>"{{ advice }}"</p>
+        </div>
+
+        <div class="task-creation">
+            <h2 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Nova Tarefa</h2>
+            <div class="input-group">
+                <label>Objetivo Principal</label>
+                <input type="text" id="task-title" placeholder="Ex: Arrumar o quarto">
+            </div>
+            
+            <div class="input-group">
+                <label>Micro-passos (mínimo 3)</label>
+                <div class="step-container">
+                    <input type="text" class="step-input" placeholder="Passo 1 (Ex: Levantar da cama)">
+                    <input type="text" class="step-input" placeholder="Passo 2 (Ex: Pegar um saco de lixo)">
+                    <input type="text" class="step-input" placeholder="Passo 3 (Ex: Jogar fora 1 papel)">
+                </div>
+            </div>
+
+            <button onclick="createTask()">Começar a Jornada</button>
+            <div id="error-msg"></div>
+        </div>
+
+        <div class="tasks-list">
+            {% for task in tasks %}
+            <div class="task-item">
+                <div class="task-header">
+                    <span class="task-title">{{ task.title }}</span>
+                    {% if task.completed %}
+                        <span class="status-badge">Concluída! 🎉</span>
+                    {% endif %}
+                </div>
+                
+                <div class="steps-list">
+                    {% for step in task.steps %}
+                    <div class="micro-step {% if step.completed %}completed{% endif %}" 
+                         {% if not step.completed %}onclick="completeStep({{ task.id }}, {{ loop.index0 }})"{% endif %}>
+                        <div class="checkbox"></div>
+                        <span>{{ step.name }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+            
+            {% if not tasks %}
+            <div style="text-align: center; color: var(--text-muted); padding: 2rem;">
+                Nenhuma tarefa ainda. Crie sua primeira tarefa acima!
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        async function createTask() {
+            const title = document.getElementById('task-title').value;
+            const stepInputs = document.querySelectorAll('.step-input');
+            const errorMsg = document.getElementById('error-msg');
+            
+            const steps = Array.from(stepInputs)
+                              .map(input => input.value.trim())
+                              .filter(val => val !== '');
+
+            try {
+                const response = await fetch('/api/tasks', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ title, steps })
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    window.location.reload(); // Atualiza a página para mostrar a nova tarefa
+                } else {
+                    errorMsg.textContent = data.message;
+                    errorMsg.style.display = 'block';
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        async function completeStep(taskId, stepIndex) {
+            try {
+                const response = await fetch(`/api/tasks/${taskId}/steps/${stepIndex}`, {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                if (data.status === 'success') {
+                    window.location.reload(); // Atualiza a página para mostrar o passo concluído
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        }
+    </script>
+</body>
+</html>

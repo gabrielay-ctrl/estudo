@@ -4,9 +4,9 @@
 
 **MindStep Tracker** é uma aplicação em Linha de Comando (CLI) desenvolvida em Python para apoiar pessoas neurodivergentes e/ou que enfrentam Transtorno do Déficit de Atenção com Hiperatividade (TDAH) e Ansiedade.
 
-## 🚀 Aplicação Online (Deploy Público)
-Acesse a aplicação completa diretamente do seu navegador (sem precisar instalar nada) através do nosso Deploy no Replit:
-👉 [Executar MindStep no Replit](https://replit.com/github/gabrielay-ctrl/estudo)
+## 🚀 Aplicação Online (Deploy Público - Entrega Intermediária)
+Acesse a aplicação web completa com interface interativa:
+👉 **[Link Vercel]** (Em breve - Deploy via Vercel)
 
 ## O Problema Real
 Imagine o seguinte cenário: **Júlia** é uma universitária com diagnóstico de TDAH e Transtorno de Ansiedade Generalizada. Durante as semanas de provas, ela frequentemente sofre crises de paralisia de tarefas. Diante do item "Estudar Física", tudo parece muito grande, complexo e inatingível. A ansiedade toma conta, e, devido ao estresse e esquecimento gerados pelas crises, ela frequentemente se esquece até do autocuidado primário, como beber água ou tomar seus medicamentos durante longos períodos de estudo.
@@ -64,24 +64,19 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Passo 4: Como Executar/Usar a Aplicação
-O núcleo CLI está em `src/cli.py`. No terminal (estando na raiz do projeto), execute:
+### Passo 4: Como Executar a Interface Web (Nova Versão)
+O projeto agora possui uma interface Web moderna utilizando **FastAPI**. Para iniciar o servidor local:
 
-**1. Adicionando a primeira tarefa (forçando a quebra em passos menores):**
 ```bash
-python -m src.cli add "Estudar Quimica" -s "Pegar o Livro" "Beber 500ml de Agua" "Ler 2 paginas"
+uvicorn app:app --reload
 ```
+Acesse no seu navegador: `http://localhost:8000`
 
-**2. Visualizando a lista de tarefas atuais no sistema:**
-```bash
-python -m src.cli list
-```
-
-**3. Concluindo (Dando Check) em um Micro-Passo:**
-(Exemplo: Concluindo o passo 0 na tarefa de ID 1)
-```bash
-python -m src.cli complete 1 0
-```
+### Como usar o antigo CLI:
+O núcleo CLI continua disponível em `src/cli.py`.
+**1. Adicionando:** `python -m src.cli add "Estudar Quimica" -s "Passo 1" "Passo 2" "Passo 3"`
+**2. Listando:** `python -m src.cli list`
+**3. Concluindo:** `python -m src.cli complete 1 0`
 
 ---
 
