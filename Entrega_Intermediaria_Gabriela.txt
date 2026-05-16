@@ -1,0 +1,130 @@
+================================================================================
+                    ENTREGA INTERMEDIARIA - BOOTCAMP
+================================================================================
+
+Nome: Gabriela Yasmin Conceicao Viana
+RA: 22505273
+Professor: Dr. Romes Heriberto
+Disciplina: Bootcamp
+Curso: Engenharia de Software
+
+================================================================================
+1. INFORMACOES DO PROJETO
+================================================================================
+
+Nome do projeto: MindStep Tracker
+Repositorio GitHub: https://github.com/gabrielay-ctrl/estudo
+Branch de desenvolvimento: entrega-intermediaria
+Link do deploy (Vercel): https://estudo-bkp5.vercel.app
+
+Descricao:
+O MindStep Tracker e uma aplicacao web voltada para auxiliar pessoas
+neurodivergentes (como portadores de TDAH e ansiedade cronica) que sofrem
+com paralisia de tarefas. O sistema forca a divisao de grandes atividades
+em no minimo 3 micro-passos antes de sua execucao, proporcionando
+acompanhamento guiado para evitar sobrecarga cognitiva.
+
+================================================================================
+2. O QUE FOI FEITO NESTA ETAPA
+================================================================================
+
+2.1 - GitHub Issue
+Foi criada a Issue #1 no repositorio, documentando a demanda de evolucao
+do projeto: integracao com API externa, testes de integracao e deploy.
+
+2.2 - Branching (Ramificacao)
+Todo o desenvolvimento foi realizado na branch "entrega-intermediaria",
+separada da branch principal (main), seguindo boas praticas de versionamento.
+
+2.3 - Consumo de API REST
+Foi integrada a API publica AdviceSlip (https://api.adviceslip.com/advice),
+que retorna conselhos motivacionais aleatorios em ingles. O conselho e
+exibido na tela principal da aplicacao web, na secao "Conselho do Dia".
+
+2.4 - Testes de Integracao
+Foram implementados dois testes automatizados no arquivo
+tests/test_api_client.py utilizando a biblioteca pytest com mock:
+
+  - test_get_motivational_advice_success: valida que a funcao retorna
+    corretamente o conselho da API quando a requisicao e bem-sucedida.
+
+  - test_get_motivational_advice_failure: valida que a funcao retorna
+    uma mensagem padrao de fallback quando a API esta indisponivel
+    ou ocorre timeout.
+
+2.5 - Deploy em Nuvem
+A aplicacao foi publicada na plataforma Vercel, acessivel pelo link:
+https://estudo-bkp5.vercel.app
+
+A configuracao do deploy esta no arquivo vercel.json na raiz do projeto.
+
+2.6 - Pull Request e Merge
+O codigo da branch entrega-intermediaria foi integrado a branch main
+atraves de Pull Request no GitHub, com a mensagem "closes #1" para
+resolver automaticamente a Issue criada.
+
+================================================================================
+3. TECNOLOGIAS UTILIZADAS
+================================================================================
+
+- Python 3.12
+- FastAPI (framework web)
+- Uvicorn (servidor ASGI)
+- Requests (consumo de API externa)
+- Pytest (testes automatizados)
+- Ruff (analise estatica / linting)
+- GitHub Actions (CI/CD - pipeline automatizado)
+- Vercel (hospedagem em nuvem)
+- HTML5 / CSS3 / JavaScript (interface web)
+
+================================================================================
+4. ESTRUTURA DO PROJETO
+================================================================================
+
+estudo/
+  app.py                  -> Aplicacao principal (FastAPI + HTML + logica)
+  requirements.txt        -> Dependencias do projeto
+  vercel.json             -> Configuracao de deploy na Vercel
+  README.md               -> Documentacao do projeto
+  tests/
+    test_api_client.py    -> Testes de integracao da API
+  src/
+    microstep.py          -> Modulo original do gerenciador de tarefas
+    api_client.py         -> Modulo original do cliente da API
+  .github/
+    workflows/
+      ci.yml              -> Pipeline de CI (GitHub Actions)
+
+================================================================================
+5. COMO EXECUTAR LOCALMENTE
+================================================================================
+
+1. Clonar o repositorio:
+   git clone https://github.com/gabrielay-ctrl/estudo.git
+
+2. Instalar as dependencias:
+   pip install -r requirements.txt
+
+3. Rodar a aplicacao:
+   uvicorn app:app --reload
+
+4. Acessar no navegador:
+   http://localhost:8000
+
+5. Rodar os testes:
+   pytest tests/
+
+================================================================================
+6. CRITERIOS ATENDIDOS (BAREMA)
+================================================================================
+
+[X] Issue criada no GitHub documentando a demanda
+[X] Branch separada (entrega-intermediaria) para desenvolvimento
+[X] Consumo de API REST publica (AdviceSlip)
+[X] Testes de integracao implementados e funcionando
+[X] Pipeline CI/CD verde (GitHub Actions)
+[X] Deploy em nuvem (Vercel) com link publico acessivel
+[X] Pull Request realizado e merge concluido
+[X] README atualizado com instrucoes
+
+================================================================================
