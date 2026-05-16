@@ -7,7 +7,6 @@
 Acesse a aplicação web completa com interface interativa: (https://estudo-swart.vercel.app)
 =======
 ##  O Problema Real
-main
 Imagine o seguinte cenário: **Júlia** é uma universitária com diagnóstico de TDAH e Transtorno de Ansiedade Generalizada. Durante as semanas de provas, ela frequentemente sofre crises de paralisia de tarefas. Diante do item "Estudar Física", tudo parece muito grande, complexo e inatingível. A ansiedade toma conta, e, devido ao estresse e esquecimento gerados pelas crises, ela frequentemente se esquece até do autocuidado primário, como beber água ou tomar seus medicamentos durante longos períodos de estudo.
 
 A principal dor aqui é a **Paralisia por Análise e Sobrecarga Cognitiva**, onde grandes tarefas geram não apenas a procrastinação evasiva, mas danos paralelos ao esquecer hábitos fundamentais.
