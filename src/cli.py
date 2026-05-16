@@ -1,5 +1,6 @@
 import argparse
 from src.microstep import MindStepManager
+from src.api_client import get_motivational_advice
 
 def show_tasks(manager: MindStepManager):
     tasks = manager.get_all_tasks()
@@ -43,7 +44,8 @@ def main():
         try:
             manager.create_task(args.title, args.steps)
             print(f"\n[+] Tarefa '{args.title}' adicionada com sucesso com {len(args.steps)} micro-passos!")
-            print("Lembre-se: avance 1% de cada vez. Beba água!\n")
+            advice = get_motivational_advice()
+            print(f"Lembre-se: {advice}\n")
         except ValueError as e:
             print(f"\n[ERRO] {e}\n")
 
@@ -51,6 +53,9 @@ def main():
         try:
             task = manager.complete_micro_step(args.task_id, args.step_id)
             print(f"\n[+] Muito bem! Micro-passo {args.step_id} da tarefa {args.task_id} concluído.")
+            advice = get_motivational_advice()
+            print(f"💡 Conselho: {advice}")
+            
             if task["completed"]:
                 print("🎉 PARABÉNS! Você conseguiu terminar a tarefa inteira! 🎉")
             print("")
